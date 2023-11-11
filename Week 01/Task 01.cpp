@@ -7,7 +7,8 @@ int main() {
     cout << "Enter the value of n: ";
     cin >> n;
 
-    bool numbers[100] = { false };  // Initialize an array to keep track of numbers
+    constexpr int SIZE = 100;
+    bool numbers[SIZE] = {false};  // Initialize an array to keep track of numbers
 
     cout << "Enter numbers from 1 to " << n << " (0 to stop): ";
     int num;
@@ -26,7 +27,7 @@ int main() {
 
     int missingNumber = -1;
     for (int i = 0; i < n; i++) {
-        if (!numbers[i]) {
+        if (!numbers[i]) { 
             missingNumber = i + 1;  // The first missing number
             break;
         }
